@@ -1,0 +1,123 @@
+/* 1) Global page background on body/html, not on a nested div */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overscroll-behavior-y: contain;
+  background-color: #1a4d6d;
+}
+
+/* Fixed background image bound to viewport */
+body {
+  background-image: url("https://storage.123fakturera.se/public/wallpapers/sverige43.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /* let browser handle it at root level */
+}
+
+/* 2) Let each page just be a normal scrolling layer */
+#root {
+  min-height: 100vh;
+}
+
+/* Terms page no longer owns the background */
+.terms-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 20px;
+}
+
+/* Everything else same as you had, but DELETE .terms-background and .background-image */
+.terms-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.terms-header-section {
+  max-width: 800px;
+  width: 100%;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.terms-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.terms-container {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* New class for content coloring */
+.terms-content {
+  color: #00000099;
+  /* Black with 60% opacity (hex 99) */
+  font-size: 16px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.terms-close-button {
+  width: 15vw;
+  max-width: 280px;
+  height: 54px;
+  padding: 14px;
+  background: rgb(8, 158, 30);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.terms-close-button-bottom {
+  margin-top: 30px;
+}
+
+/* keep your responsive tweaks */
+@media (max-width: 480px) {
+  .terms-page {
+    padding: 15px 10px;
+  }
+
+  .terms-container {
+    padding: 20px 15px;
+  }
+
+  .terms-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  .terms-close-button {
+    width: 100%;
+    font-size: 13px;
+    height: 48px;
+  }
+
+  .terms-close-button-bottom {
+    width: 100%;
+  }
+}

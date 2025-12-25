@@ -1,0 +1,420 @@
+.pricelist-page {
+  min-height: 100vh;
+  background: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.pricelist-layout {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.pricelist-header {
+  background: #1976d2;
+  color: white;
+  padding: 0 24px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  z-index: 20;
+  flex-shrink: 0;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.header-left,
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.user-profile:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.user-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hamburger-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  padding: 4px;
+}
+
+.hamburger-menu-btn span {
+  width: 24px;
+  height: 2px;
+  background: white;
+  border-radius: 2px;
+}
+
+.sidebar-menu {
+  width: 260px;
+  background: white;
+  border-right: 1px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  padding-top: 24px;
+}
+
+.menu-title {
+  padding: 0 24px 16px;
+  font-size: 18px;
+  font-weight: 700;
+  border-bottom: 2px solid #f5f5f5;
+  margin-bottom: 12px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 24px;
+  color: #5f6368;
+  cursor: pointer;
+  transition: 0.2s;
+  position: relative;
+  font-weight: 500;
+}
+
+.menu-item:hover {
+  background: #f0f8ff;
+  color: #0288d1;
+}
+
+.menu-item.active {
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.menu-item.active::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background: #4caf50;
+  border-radius: 50%;
+}
+
+.pricelist-main {
+  flex: 1;
+  padding: 32px 40px;
+  overflow-y: auto;
+  background: #ffffff;
+}
+
+.pricelist-container {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.search-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.search-inputs {
+  display: flex;
+  gap: 16px;
+  flex: 1;
+  max-width: 600px;
+}
+
+.search-field {
+  position: relative;
+  flex: 1;
+}
+
+.search-field input {
+  width: 100%;
+  padding: 10px 40px 10px 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 100px;
+  font-size: 14px;
+  height: 42px;
+}
+
+.search-icon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #00bcd4;
+  pointer-events: none;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 20px;
+  height: 42px;
+  border: 1px solid #e0e0e0;
+  border-radius: 100px;
+  background: white;
+  cursor: pointer;
+  font-weight: 500;
+  color: #5f6368;
+}
+
+.action-btn:hover {
+  border-color: #00bcd4;
+  color: #00bcd4;
+  background: #f0f8ff;
+}
+
+/* Green New Product Button */
+.action-btn.new-product {
+  background-color: #4caf50;
+  border-color: #4caf50;
+  color: white;
+  padding-right: 20px;
+}
+
+.action-btn.new-product svg {
+  stroke: white;
+}
+
+.action-btn.new-product:hover {
+  background-color: #43a047;
+  border-color: #43a047;
+  color: white;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.pricelist-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+}
+
+.pricelist-table th {
+  text-align: left;
+  padding: 0 16px 8px;
+  color: #5f6368;
+  font-weight: 600;
+}
+
+.pricelist-table td {
+  padding: 0 8px;
+  vertical-align: middle;
+}
+
+.editable-field {
+  width: 100%;
+  padding: 10px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 100px;
+  font-size: 14px;
+  height: 40px;
+}
+
+.col-article {
+  width: 140px;
+}
+
+.col-product {
+  width: 280px;
+}
+
+.col-inprice,
+.col-price {
+  width: 110px;
+}
+
+.col-unit {
+  width: 90px;
+}
+
+.col-stock {
+  width: 100px;
+}
+
+.col-actions {
+  width: 50px;
+}
+
+.mobile-menu-dropdown {
+  position: absolute;
+  top: 64px;
+  left: 0;
+  width: 100%;
+  background: white;
+  z-index: 100;
+  border-bottom: 1px solid #eee;
+}
+
+.mobile-menu-item {
+  padding: 16px 24px;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+@media (max-width: 1024px) {
+  .sidebar-menu {
+    display: none;
+  }
+
+  .hamburger-menu-btn {
+    display: flex;
+  }
+
+  .desktop-only {
+    display: none !important;
+  }
+
+  .pricelist-main {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    padding: 0;
+  }
+
+  .user-info,
+  .user-company {
+    display: none;
+  }
+
+  .search-section {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .search-inputs {
+    flex-direction: column;
+    max-width: none;
+  }
+
+  .action-buttons {
+    justify-content: space-between;
+  }
+
+  /* Mobile Action Buttons */
+  .action-btn {
+    flex: 1;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .action-btn span {
+    display: none;
+  }
+
+  /* Keep green button icon white on mobile */
+  .action-btn.new-product {
+    padding: 0;
+  }
+
+  .action-btn.new-product svg {
+    stroke: white;
+  }
+
+  .pricelist-table,
+  .pricelist-table tbody,
+  .pricelist-table tr,
+  .pricelist-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .pricelist-table thead {
+    display: none;
+  }
+
+  .pricelist-table tr {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  .pricelist-table td {
+    padding: 0 0 12px 0;
+    border: none;
+  }
+
+  .col-product::before {
+    content: 'Product';
+    font-size: 11px;
+    font-weight: bold;
+    color: #666;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .col-price::before {
+    content: 'Price';
+    font-size: 11px;
+    font-weight: bold;
+    color: #666;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .tablet-landscape {
+    display: none !important;
+  }
+
+  .editable-field {
+    border-radius: 8px;
+  }
+
+  .col-actions {
+    text-align: right;
+    margin-top: -40px;
+  }
+}
